@@ -25,3 +25,26 @@
 5. 服务端口默认3000
 
     访问http://localhost:3000/
+
+## jade ---> html
+
+1. 安装之前应该先安装ejs
+
+    `npm install ejs / cnpm install ejs -save`
+2. 修改app.js
+
+默认：
+
+`app.set('view engine', 'html');`
+
+改为
+```
+var ejs=require('ejs');
+app.engine('html',ejs.__express);
+app.set('view engine', 'html');
+```
+3. 把view目录下的jade 文件改为 html
+
++ 使用 npm install jade -g全局安装。
+
++ 然后在jade源文件那，使用 jade xxx.jade编译生成你需要的html
