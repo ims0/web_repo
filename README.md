@@ -48,3 +48,20 @@ app.set('view engine', 'html');
 + 使用 npm install jade -g全局安装。
 
 + 然后在jade源文件那，使用 jade xxx.jade编译生成你需要的html
+
+## add web ico
+
+1. 安装 serve-favicon
+
+`npm install serve-favicon`
+
+2. app modify
+
+```
+var favicon = require('serve-favicon');
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+```
+
+3. index.html modify
+
+` <link rel="icon" th:href="favicon.ico" type="image/x-icon"> `

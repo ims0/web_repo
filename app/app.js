@@ -15,6 +15,9 @@ var ejs=require('ejs');
 app.engine('html',ejs.__express);
 app.set('view engine', 'html');
 app.set('views', path.join(__dirname, 'views'));
+// ico
+var favicon = require('serve-favicon');
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
 app.use(logger('dev'));
 app.use(express.json());
